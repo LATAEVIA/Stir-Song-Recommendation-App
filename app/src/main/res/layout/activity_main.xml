@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     tools:context="com.lataeviaberry.stirsuggestions.MainActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/blurred_lines_300x300"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,14 +21,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
-        android:textColor="@color/colorTextIcons" />
+        android:textColor="@color/colorTextIcons"
+        android:textSize="50sp"
+        android:id="@+id/textView" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Song"
-        android:id="@+id/button"
+        android:id="@+id/findSongsButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="127dp" />
+        android:layout_marginBottom="127dp"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent" />
 </RelativeLayout>
