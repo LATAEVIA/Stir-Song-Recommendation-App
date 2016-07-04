@@ -1,5 +1,6 @@
 package com.lataeviaberry.stirsuggestions;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         mFindSongsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, SongsActivity.class);
+                startActivity(intent);
             }
         });
     }
