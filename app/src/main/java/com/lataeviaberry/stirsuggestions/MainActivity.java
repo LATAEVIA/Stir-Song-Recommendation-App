@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String TAG = MainActivity.class.getSimpleName();
     private Button mFindSongsButton;
     private EditText mSongEditText;
 
@@ -18,16 +17,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mSongEditText = (EditText) findViewById(R.id.songEditText);
         mFindSongsButton = (Button) findViewById(R.id.findSongsButton);
-        mFindSongsButton.setOnClickListener(new View.OnClickListener() {
 
+        mFindSongsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String song = mSongEditText.getText().toString();
-                Log.d(TAG, song);
                 Intent intent = new Intent(MainActivity.this, SongsActivity.class);
+                intent.putExtra("song", song);
                 startActivity(intent);
             }
         });
