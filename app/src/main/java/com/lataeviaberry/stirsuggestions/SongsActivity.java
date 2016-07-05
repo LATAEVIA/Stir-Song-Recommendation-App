@@ -40,6 +40,8 @@ public class SongsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String song = ((TextView)view).getText().toString();
                 Toast.makeText(SongsActivity.this, song, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SongsActivity.this, PlaybackActivity.class);
+                startActivity(intent);
             }
         });
 

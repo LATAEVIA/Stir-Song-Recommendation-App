@@ -12,7 +12,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.findSongsButton)
     Button mFindSongsButton;
     @Bind(R.id.songEditText)
@@ -29,14 +29,16 @@ public class MainActivity extends AppCompatActivity {
         Typeface indieFlowerFont = Typeface.createFromAsset(getAssets(), "fonts/IndieFlower.ttf");
         mAppNameTextView.setTypeface(indieFlowerFont);
 
-        mFindSongsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String song = mSongEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, SongsActivity.class);
-                intent.putExtra("song", song);
-                startActivity(intent);
-            }
-        });
+        mFindSongsButton.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        if(v == mFindSongsButton) {
+            String song = mSongEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, SongsActivity.class);
+            intent.putExtra("song", song);
+            startActivity(intent);
+
+        }
     }
 }
