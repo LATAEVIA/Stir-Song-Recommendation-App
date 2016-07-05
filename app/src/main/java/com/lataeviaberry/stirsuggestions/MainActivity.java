@@ -1,6 +1,7 @@
 package com.lataeviaberry.stirsuggestions;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         mSongEditText = (EditText) findViewById(R.id.songEditText);
         mFindSongsButton = (Button) findViewById(R.id.findSongsButton);
         mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+        Typeface indieFlowerFont = Typeface.createFromAsset(getAssets(), "fonts/IndieFlower.ttf");
+        mAppNameTextView.setTypeface(indieFlowerFont);
 
         mFindSongsButton.setOnClickListener(new View.OnClickListener() {
             @Override
