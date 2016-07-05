@@ -9,18 +9,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    private Button mFindSongsButton;
-    private EditText mSongEditText;
-    private TextView mAppNameTextView;
+    @Bind(R.id.findSongsButton)
+    Button mFindSongsButton;
+    @Bind(R.id.songEditText)
+    EditText mSongEditText;
+    @Bind(R.id.appNameTextView)
+    TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mSongEditText = (EditText) findViewById(R.id.songEditText);
-        mFindSongsButton = (Button) findViewById(R.id.findSongsButton);
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+        ButterKnife.bind(this);
+
         Typeface indieFlowerFont = Typeface.createFromAsset(getAssets(), "fonts/IndieFlower.ttf");
         mAppNameTextView.setTypeface(indieFlowerFont);
 
